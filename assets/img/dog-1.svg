@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="Photo placeholder — add public/assets/img/photos/dog-1.jpg">
+  <rect width="480" height="480" fill="#f3f1eb"/>
+  <g fill="#141517" opacity=".9">
+    <ellipse cx="60" cy="70" rx="26" ry="19" transform="rotate(-18 60 70)"/>
+    <ellipse cx="220" cy="46" rx="15" ry="22" transform="rotate(22 220 46)"/>
+    <ellipse cx="410" cy="90" rx="28" ry="20" transform="rotate(-32 410 90)"/>
+    <ellipse cx="70" cy="380" rx="20" ry="27" transform="rotate(-12 70 380)"/>
+    <ellipse cx="420" cy="400" rx="19" ry="15" transform="rotate(14 420 400)"/>
+    <ellipse cx="240" cy="430" rx="14" ry="12"/>
+  </g>
+  <g transform="translate(240 220)">
+    <circle r="86" fill="#6d1a20"/>
+    <g fill="#fbfaf7">
+      <ellipse cx="0" cy="20" rx="30" ry="24"/>
+      <circle cx="-36" cy="-12" r="12"/>
+      <circle cx="-12" cy="-30" r="12"/>
+      <circle cx="12" cy="-30" r="12"/>
+      <circle cx="36" cy="-12" r="12"/>
+    </g>
+  </g>
+  <text x="240" y="346" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#3b3e43">Photo coming soon</text>
+  <text x="240" y="368" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#6c7178">public/assets/img/photos/dog-1.jpg</text>
+</svg>

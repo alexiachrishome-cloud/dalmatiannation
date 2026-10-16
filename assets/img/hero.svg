@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" role="img" aria-label="Photo placeholder — add public/assets/img/photos/hero.jpg">
+  <rect width="480" height="600" fill="#f3f1eb"/>
+  <g fill="#141517" opacity=".9">
+    <ellipse cx="60" cy="70" rx="26" ry="19" transform="rotate(-18 60 70)"/>
+    <ellipse cx="210" cy="40" rx="15" ry="22" transform="rotate(22 210 40)"/>
+    <ellipse cx="410" cy="90" rx="28" ry="20" transform="rotate(-32 410 90)"/>
+    <ellipse cx="120" cy="200" rx="18" ry="13"/>
+    <ellipse cx="330" cy="210" rx="21" ry="28" transform="rotate(36 330 210)"/>
+    <ellipse cx="60" cy="360" rx="20" ry="27" transform="rotate(-12 60 360)"/>
+    <ellipse cx="430" cy="330" rx="19" ry="15" transform="rotate(14 430 330)"/>
+    <ellipse cx="220" cy="520" rx="14" ry="12"/>
+    <ellipse cx="90" cy="520" rx="24" ry="17" transform="rotate(20 90 520)"/>
+    <ellipse cx="380" cy="470" rx="22" ry="30" transform="rotate(-25 380 470)"/>
+    <ellipse cx="300" cy="580" rx="17" ry="12" transform="rotate(10 300 580)"/>
+  </g>
+  <g transform="translate(240 300)">
+    <circle r="96" fill="#6d1a20"/>
+    <g fill="#fbfaf7">
+      <ellipse cx="0" cy="22" rx="34" ry="27"/>
+      <circle cx="-40" cy="-14" r="13"/>
+      <circle cx="-14" cy="-34" r="13"/>
+      <circle cx="14" cy="-34" r="13"/>
+      <circle cx="40" cy="-14" r="13"/>
+    </g>
+  </g>
+  <text x="240" y="440" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#3b3e43">Your photo goes here</text>
+  <text x="240" y="462" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#6c7178">public/assets/img/photos/hero.jpg</text>
+</svg>
