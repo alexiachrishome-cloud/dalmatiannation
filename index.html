@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; font-src 'self'; connect-src 'self' https://api.web3forms.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; form-action https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Dalmatian Nation — purine-controlled complete dog food for Dalmatians, UK</title>
 <meta name="description" content="Purine-controlled complete dog food designed for Dalmatians and dogs with urinary issues (HUA), made in the UK by two Dalmatian parents. Honest ingredients, no silent recipe changes. Take the survey for a discount on your first order.">
@@ -25,6 +25,7 @@
 <meta name="twitter:title" content="Dalmatian Nation — purine-controlled complete dog food for Dalmatians, UK">
 <meta name="twitter:description" content="Purine-controlled complete dog food designed for Dalmatians and dogs with urinary issues (HUA), made in the UK by two Dalmatian parents. Honest ingredients, no silent recipe changes. Take the survey for a discount on your first order.">
 <meta name="twitter:image" content="https://dalmatiannation.co.uk/assets/img/og.jpg">
+<meta name="dn-ga" content="G-V9R9HJWNVW">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/favicon.svg">
 <link rel="preload" as="image" href="/assets/img/photos/hero.jpg?v=95f3ed8e" fetchpriority="high">
@@ -230,11 +231,18 @@
 
     <div class="footer-fine">
       <span>&copy; 2026 Dalmatian Nation. All rights reserved.</span>
-              <span>No tracking cookies, no ad networks — just us.</span>
+              <span>No ad networks, no tracking unless you say yes — <a href="#" data-cookie-settings>cookie settings</a>.</span>
           </div>
   </div>
 </footer>
 
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie choice" hidden>
+  <p><strong>Can we count visits?</strong> We'd like to use Google Analytics to see which pages people find useful. It only runs if you say yes, it's never used for ads, and you can change your mind any time in the footer. <a href="/privacy#cookies">What this means</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-primary btn-sm" data-consent="yes">Yes, that's fine</button>
+    <button type="button" class="btn btn-ghost btn-sm" data-consent="no">No thanks</button>
+  </div>
+</div>
 
 <script src="/assets/js/site.js?v=6918ea45" defer></script>
 </body>
