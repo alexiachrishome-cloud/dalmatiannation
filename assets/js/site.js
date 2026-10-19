@@ -2,6 +2,27 @@
 (function () {
   'use strict';
 
+  var pageStart = Date.now();   // used by the survey's "real people take a while" check
+
+  // Thank-you page after the survey: show the LEGACY number if our Google script handed one back.
+  var slot = document.getElementById('legacy-result');
+  if (slot) {
+    var saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem('dn_legacy') || 'null'); sessionStorage.removeItem('dn_legacy'); } catch (err) { saved = null; }
+    if (saved && saved.legacy) {
+      slot.querySelector('.legacy-num').textContent = String(saved.legacy);
+      slot.querySelector('.legacy-gift').hidden = !saved.gift;
+      slot.querySelector('.legacy-repeat').hidden = true;
+      slot.hidden = false;
+    } else if (saved && saved.repeat) {
+      slot.querySelector('.legacy-label').hidden = true;
+      slot.querySelector('.legacy-num').hidden = true;
+      slot.querySelector('.legacy-gift').hidden = true;
+      slot.querySelector('.legacy-repeat').hidden = false;
+      slot.hidden = false;
+    }
+  }
+
   // Put the protected email address back together (the page only holds reversed halves,
   // so simple scraping bots never see a real address). Plain text, not a link.
   var rev = function (s) { return (s || '').split('').reverse().join(''); };
@@ -201,7 +222,34 @@
         body: JSON.stringify(payload)
       }).then(function (r) { return r.json(); }).then(function (res) {
         if (res && res.success) {
-          window.location.href = form.getAttribute('data-thanks');
+          var go = function () { window.location.href = form.getAttribute('data-thanks'); };
+          var endpoint = kind === 'survey' ? form.getAttribute('data-legacy-endpoint') : '';
+          if (!endpoint) { go(); return; }
+          // Instant LEGACY number: ask our Google script (plain-text POST, so no extra browser checks).
+          // Never hold the person up for more than 8 seconds; if it doesn't answer, the number still
+          // arrives by email (the script also picks up the Web3Forms email as a backstop).
+          var finished = false;
+          var finish = function (result) {
+            if (finished) { return; }
+            finished = true;
+            try { if (result) { sessionStorage.setItem('dn_legacy', JSON.stringify(result)); } } catch (err) { /* private mode */ }
+            go();
+          };
+          setTimeout(function () { finish(null); }, 8000);
+          var legacyReq = {
+            token: form.getAttribute('data-legacy-token') || '',
+            website: ticked('botcheck') ? 'x' : '',
+            elapsed_ms: Date.now() - pageStart
+          };
+          for (var k in data) { if (Object.prototype.hasOwnProperty.call(data, k)) { legacyReq[k] = data[k]; } }
+          fetch(endpoint, { method: 'POST', body: JSON.stringify(legacyReq), redirect: 'follow' })
+            .then(function (r) { return r.json(); })
+            .then(function (lr) {
+              if (lr && lr.ok && lr.legacy) { finish({ legacy: lr.legacy, gift: !!lr.gift }); }
+              else if (lr && lr.ok && lr.repeat) { finish({ repeat: true }); }
+              else { finish(null); }
+            })
+            .catch(function () { finish(null); });
         } else {
           fail(btn, 'Sorry — that didn\'t send (' + ((res && res.message) || 'unknown error') + '). Your answers are still here, please try again in a minute.');
         }

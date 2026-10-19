@@ -115,13 +115,25 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
    Brand mark
    -------------------------------------------------------------------------- */
 .brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--ink); }
-.brand-mark { width: 44px; height: 44px; flex: none; }
+.brand-mark { display: inline-block; width: 44px; height: 44px; flex: none; }
 .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .brand-logo { display: inline-flex; flex: none; }
 .brand-logo img { height: 78px; width: auto; display: block; }
 .brand-logo.on-dark { background: #fff; border-radius: 14px; padding: .55rem .9rem; }
 .brand-logo.on-dark img { height: 88px; }
 @media (max-width: 720px) { .brand-logo img { height: 52px; } }
+/* Header: dog + bowl logo (no wording) with "Dalmatian Nation" written beside it, styled like the logo */
+.brand-header { gap: .8rem; }
+.brand-dog { display: inline-flex; flex: none; }
+.brand-dog img { height: 66px; width: auto; display: block; }
+.brand-name { display: flex; flex-direction: column; align-items: center; line-height: .95; font-weight: 900; text-transform: uppercase; font-size: 1.55rem; letter-spacing: .01em; color: var(--ink); white-space: nowrap; }
+.brand-name span { margin-top: .2rem; font-size: .62em; font-weight: 800; letter-spacing: .32em; padding-left: .32em; color: #c8202b; }
+@media (max-width: 720px) { .brand-dog img { height: 48px; } .brand-name { font-size: 1.2rem; } }
+/* Footer version: the dog sits on a small white card (the artwork has black lines), name in white + a lighter red */
+.brand-footer .brand-dog { background: #fff; border-radius: 14px; padding: .35rem; }
+.brand-footer .brand-dog img { height: 58px; }
+.brand-footer .brand-name { color: #fff; }
+.brand-footer .brand-name span { color: #e2565f; }
 .brand-word { font-weight: 800; letter-spacing: -.03em; font-size: 1.25rem; line-height: 1; white-space: nowrap; }
 .brand-word b { color: var(--accent-700); font-weight: 800; }
 .mark-badge { fill: var(--accent-700); }
@@ -396,7 +408,7 @@ textarea { min-height: 150px; resize: vertical; line-height: 1.55; }
    Thanks / 404
    -------------------------------------------------------------------------- */
 .hero-simple { padding: clamp(4rem, 10vw, 8rem) 0; text-align: center; }
-.hero-simple .brand-mark { width: 92px; height: 92px; margin: 0 auto 1.5rem; }
+.hero-simple .brand-mark { display: block; width: 92px; height: 92px; margin: 0 auto 1.5rem; }
 .hero-simple p { max-width: 52ch; margin-inline: auto; }
 .hero-simple .actions { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; margin-top: 1.75rem; }
 
@@ -417,7 +429,9 @@ textarea { min-height: 150px; resize: vertical; line-height: 1.55; }
 .footer-grid { display: grid; gap: 2.5rem; grid-template-columns: 1.4fr 1fr 1fr; }
 @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
 .footer-brand .brand { margin-bottom: 1rem; }
-.footer-tag { max-width: 40ch; }.footer-note { font-size: .9rem; color: rgba(255,255,255,.6); }
+.footer-tag { max-width: 40ch; }
+.ig-link { display: inline-flex; align-items: center; gap: .1rem; font-weight: 700; }
+.contact-ig { margin-top: .75rem; }.footer-note { font-size: .9rem; color: rgba(255,255,255,.6); }
 .footer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
 .footer-links a { text-decoration: none; }
 .footer-links a:hover { text-decoration: underline; }
