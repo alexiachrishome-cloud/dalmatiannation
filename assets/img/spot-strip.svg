@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="18" viewBox="0 0 220 18">
+  <!-- Dalmatian spots for the strip under the header; tiles left-to-right, so every spot stays inside the tile -->
+  <g fill="#141517">
+    <ellipse cx="9" cy="9" rx="5.5" ry="4.2" transform="rotate(-20 9 9)"/>
+    <ellipse cx="27" cy="5" rx="2.4" ry="2"/>
+    <ellipse cx="38" cy="11.5" rx="4" ry="3.2" transform="rotate(25 38 11.5)"/>
+    <ellipse cx="56" cy="6.5" rx="6" ry="3.8" transform="rotate(10 56 6.5)"/>
+    <ellipse cx="70" cy="13" rx="2" ry="1.7"/>
+    <ellipse cx="83" cy="8" rx="3.6" ry="4.4" transform="rotate(-30 83 8)"/>
+    <ellipse cx="101" cy="11" rx="5.2" ry="3.4" transform="rotate(-8 101 11)"/>
+    <ellipse cx="115" cy="4.5" rx="2.2" ry="1.8"/>
+    <ellipse cx="128" cy="9.5" rx="4.6" ry="4" transform="rotate(35 128 9.5)"/>
+    <ellipse cx="146" cy="12.5" rx="2.8" ry="2.2"/>
+    <ellipse cx="160" cy="7" rx="6.2" ry="3.6" transform="rotate(-15 160 7)"/>
+    <ellipse cx="176" cy="13" rx="3" ry="2.6" transform="rotate(20 176 13)"/>
+    <ellipse cx="190" cy="6" rx="2.3" ry="2"/>
+    <ellipse cx="205" cy="10" rx="5" ry="4" transform="rotate(12 205 10)"/>
+  </g>
+</svg>
