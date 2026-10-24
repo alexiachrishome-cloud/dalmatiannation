@@ -66,7 +66,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .small { font-size: .9rem; }
 .wrap { width: min(var(--wrap), 100% - 2.5rem); margin-inline: auto; }
 .wrap-narrow { width: min(760px, 100% - 2.5rem); margin-inline: auto; }
-.eyebrow { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-700); margin-bottom: .8rem; }
+.eyebrow { text-wrap: balance; display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-700); margin-bottom: .8rem; }
 .center { text-align: center; }
 .more-link { margin-top: 2rem; }
 .section-close { margin: 2rem 0 0; }
@@ -74,7 +74,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .page-about-us main > section { padding-block: clamp(2.25rem, 4vw, 3.5rem); }
 .page-about-us .page-head .lede { margin-bottom: 0; }
 .page-about-us .split { align-items: start; }
-.page-about-us .site-footer { margin-top: 0; }
+.page-about-us .site-footer, .page-home .site-footer { margin-top: 0; }
+.page-about-us #what h2 { font-size: clamp(1.55rem, 2.6vw, 2.05rem); }
 /* Gallery */
 .gallery { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 .gallery-item { display: block; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--paper-2); }
@@ -88,12 +89,13 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 /* Gallery page: our photos and the community gallery side by side (stacked on phones) */
 .gallery-page { padding-top: 0; }
 .page-head.gallery-head { padding-bottom: .25rem; }
-.gallery-split { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); grid-template-columns: 1fr 1fr; align-items: start; }
+.gallery-split { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); grid-template-columns: 1fr; align-items: start; }
 .gallery-col { display: grid; gap: 1.25rem; align-content: start; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1.25rem, 3vw, 2rem); box-shadow: var(--shadow-sm); }
 .gallery-col .lede { margin: 0; }
 .gallery-col .callout { margin: 0; }
 .gallery-col-title { font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin: 0; }
-.gallery-col .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.gallery-col .gallery { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); }
+.gallery-col:first-child .gallery { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 @media (max-width: 860px) { .gallery-split { grid-template-columns: 1fr; } }
 /* Blog & Advice */
 .blog-card { display: flex; flex-direction: column; }
@@ -325,7 +327,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 /* "K-9 Rocket Fuel" box: Lex's rocket (assets/img/k9-rocket.png, red cut out) flies behind see-through cards */
 .product-range { position: relative; overflow: hidden; background: #c91f12 url("../img/k9-rocket.png") no-repeat 84% 30% / auto 125%; border-radius: var(--radius-lg); padding: clamp(1.1rem, 3vw, 1.75rem); box-shadow: var(--shadow); }
 .product-range .product { background: rgba(255, 255, 255, .84); border-color: rgba(255, 255, 255, .55); }
-@media (max-width: 760px) { .product-range { background-size: 135% auto; background-position: 50% 62%; } }
+@media (max-width: 760px) { .product-range { background-size: 135% auto; background-position: 50% 62%; } .product-range .product { background: rgba(255, 255, 255, .92); } }
 .range-head { margin-bottom: 1.1rem; }
 .range-name { display: flex; align-items: center; gap: .45rem; margin: 0; font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-weight: 900; letter-spacing: -.01em; color: #fff; text-transform: uppercase; }
 .range-rocket { width: 1.1em; height: 1.1em; fill: currentColor; stroke-width: 1.6; flex: none; }
@@ -359,7 +361,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .form { display: grid; gap: 1.25rem; }
 .form-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr 1fr; }
 @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
-.field { display: grid; gap: .4rem; }
+.field { display: grid; gap: .4rem; align-content: start; }
 .field > label, .field > .label { font-weight: 700; font-size: .98rem; }
 .field .req { color: var(--danger); font-weight: 700; margin-left: .15rem; }
 .field .help { font-size: .9rem; color: var(--muted); margin: 0; }
