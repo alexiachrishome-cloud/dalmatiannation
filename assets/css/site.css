@@ -162,8 +162,15 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   background: var(--rocket-red);
   border-bottom: 1px solid #9e1922;
 }
+/* Lex's K-9 Rocket Fuel rocket at 60°, faint, tucked slightly behind the "Home" button (placed from the menu's side,
+   so it stays tucked behind Home at every computer width; the menu is 681px wide) */
+.site-header .wrap { position: relative; isolation: isolate; }
+.site-header .wrap::before { content: ""; position: absolute; z-index: -1; right: 662px; top: 0; width: 58px; height: 75px; background: url("../img/k9-rocket-flying.png") no-repeat center / contain; opacity: .42; pointer-events: none; }
+/* phones / small tablets: partly behind the right-hand end of the DALMATIAN NATION wording */
+@media (max-width: 840px) { .site-header .wrap::before { right: auto; left: 205px; top: 2px; width: 54px; height: 70px; opacity: .34; } }
+@media (max-width: 720px) { .site-header .wrap::before { left: 168px; top: 0; width: 48px; height: 62px; } }
 /* thin strip of Dalmatian spots under the red bar */
-.site-header::after { content: ""; display: block; height: 18px; background: #fff url("../img/spot-strip.svg") 0 50% / 220px 18px repeat-x; border-bottom: 1px solid var(--line); }
+.site-header::after { content: ""; display: block; height: 28px; background: #fff url("../img/spot-strip.svg") 0 50% / 342px 28px repeat-x; border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 74px; }
 .nav { display: flex; align-items: center; gap: .15rem; }
 .nav a { padding: .55rem .9rem; border-radius: 999px; text-decoration: none; color: #fff; font-weight: 600; font-size: .95rem; }
