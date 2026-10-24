@@ -321,6 +321,17 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .tag { font-size: .78rem; font-weight: 700; padding: .3rem .65rem; border-radius: 999px; background: var(--accent-100); color: var(--accent-900); }
 
 /* Products */
+/* "K-9 Rocket Fuel" box: Lex's rocket (assets/img/k9-rocket.png, red cut out) flies behind see-through cards */
+.product-range { position: relative; overflow: hidden; background: #c91f12 url("../img/k9-rocket.png") no-repeat 84% 30% / auto 125%; border-radius: var(--radius-lg); padding: clamp(1.1rem, 3vw, 1.75rem); box-shadow: var(--shadow); }
+.product-range .product { background: rgba(255, 255, 255, .84); border-color: rgba(255, 255, 255, .55); }
+@media (max-width: 760px) { .product-range { background-size: 135% auto; background-position: 50% 62%; } }
+.range-head { margin-bottom: 1.1rem; }
+.range-name { display: flex; align-items: center; gap: .45rem; margin: 0; font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-weight: 900; letter-spacing: -.01em; color: #fff; text-transform: uppercase; }
+.range-rocket { width: 1.1em; height: 1.1em; fill: currentColor; stroke-width: 1.6; flex: none; }
+.range-sub { margin: .2rem 0 0; font-weight: 700; color: #ffe1dc; }
+@media (max-width: 760px) {
+  .product-range { grid-template-columns: 1fr; }
+  }
 .products { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); }
 .product { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; display: flex; flex-direction: column; gap: .6rem; box-shadow: var(--shadow-sm); }
 .product .status { align-self: flex-start; font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: .3rem .6rem; border-radius: 6px; background: var(--paper-2); color: var(--ink-2); }
