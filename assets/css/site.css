@@ -96,6 +96,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .gallery-col-title { font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin: 0; }
 .gallery-col .gallery { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); }
 .gallery-col:first-child .gallery { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+#community .gallery { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 640px) { #community .gallery { grid-template-columns: repeat(3, 1fr); gap: .6rem; } #community .gallery-name { font-size: .78rem; left: .35rem; bottom: .35rem; padding: .18rem .5rem; } }
 @media (max-width: 860px) { .gallery-split { grid-template-columns: 1fr; } }
 /* Blog & Advice */
 .blog-card { display: flex; flex-direction: column; }
@@ -159,7 +161,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
    -------------------------------------------------------------------------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: var(--rocket-red);
+  background: linear-gradient(100deg, var(--rocket-red) 0%, #b01a24 45%, var(--accent-700) 100%);   /* retro red → dark oxblood */
   border-bottom: 1px solid #9e1922;
 }
 /* Lex's K-9 Rocket Fuel rocket at 60°, faint, tucked slightly behind the "Home" button (placed from the menu's side,
@@ -176,8 +178,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .nav a { padding: .55rem .9rem; border-radius: 999px; text-decoration: none; color: #fff; font-weight: 600; font-size: .95rem; }
 .nav a:hover { background: rgba(255, 255, 255, .16); color: #fff; }
 .nav a.is-active { color: #fff; background: rgba(0, 0, 0, .16); }
-.nav a.btn-primary { margin-left: .6rem; color: #fff; font-weight: 700; }
-.nav a.btn-primary:hover { background: var(--accent-900); color: #fff; }
+.nav a.btn-primary { margin-left: .6rem; color: var(--accent-700); background: #fff; font-weight: 800; }
+.nav a.btn-primary:hover { background: var(--accent-50); color: var(--accent-900); }
 .nav-toggle {
   display: none; align-items: center; gap: .5rem;
   background: none; border: 2px solid #fff; border-radius: 999px;
